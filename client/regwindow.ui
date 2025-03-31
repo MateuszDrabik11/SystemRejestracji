@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RegWindow</class>
+ <widget class="QMainWindow" name="RegWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>575</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>575</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Rejestracja</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame_search_patient">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>290</y>
+      <width>591</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="lineEdit_search_patient">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>451</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid black</string>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget_search_patient">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>451</width>
+       <height>189</height>
+      </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <column>
+      <property name="text">
+       <string>Imie</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nazwisko</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Pesel</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Miasto</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Kod pocztowy</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Ulica</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Data urodzenia</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="pushButton_search_patient">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>10</y>
+       <width>111</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Wyszukaj pacjenta</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>591</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="patient_data">
+     <attribute name="title">
+      <string>Dane pacjenta</string>
+     </attribute>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>20</y>
+        <width>261</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Edytuj dane pacjenta</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>70</y>
+        <width>369</width>
+        <height>106</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="0" column="1">
+        <layout class="QFormLayout" name="formLayout_2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Kod pocztowy</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="postcode_input">
+           <property name="styleSheet">
+            <string notr="true">border: 1px solid black</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Ulica</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="street_input">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>100</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 1px solid black</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Data urodzenia</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDateEdit" name="birthdate_input">
+           <property name="styleSheet">
+            <string notr="true">border: 1px solid black</string>
+           </property>
+           <property name="maximumDateTime">
+            <datetime>
+             <hour>2</hour>
+             <minute>59</minute>
+             <second>59</second>
+             <year>2999</year>
+             <month>12</month>
+             <day>31</day>
+            </datetime>
+           </property>
+           <property name="minimumDateTime">
+            <datetime>
+             <hour>20</hour>
+             <minute>48</minute>
+             <second>0</second>
+             <year>1899</year>
+             <month>12</month>
+             <day>30</day>
+            </datetime>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Imie</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="name_input">
+           <property name="styleSheet">
+            <string notr="true">border: 1px solid black</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Nazwisko</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="familyname_input">
+           <property name="styleSheet">
+            <string notr="true">border: 1px solid black</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Miasto</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="city_input">
+           <property name="styleSheet">
+            <string notr="true">border: 1px solid black</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="next_visits">
+     <attribute name="title">
+      <string>Następne wizyty</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget_visits">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>551</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <column>
+       <property name="text">
+        <string>Rodzaj wizyty</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Przeprowadza</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Godzina</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Pokój</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="refferal_prescriptions">
+     <attribute name="title">
+      <string>Skierowania/recepty</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_prescribtions">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>190</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Eksport</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_prescribtions">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>531</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <column>
+       <property name="text">
+        <string>Rodzaj</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Przepisał</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Wykonuje</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Godzina</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Pokój</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="new_visit">
+     <attribute name="title">
+      <string>Umów wizytę</string>
+     </attribute>
+     <widget class="QComboBox" name="visit_type">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>80</y>
+        <width>91</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Wizyta</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Zabieg</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RTG</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>MRI</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>EKG</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>USG</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>morfologia</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QDateTimeEdit" name="dateTimeEdit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>194</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="wrapping">
+       <bool>false</bool>
+      </property>
+      <property name="accelerated">
+       <bool>true</bool>
+      </property>
+      <property name="showGroupSeparator" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="maximumDateTime">
+       <datetime>
+        <hour>23</hour>
+        <minute>59</minute>
+        <second>59</second>
+        <year>2200</year>
+        <month>12</month>
+        <day>31</day>
+       </datetime>
+      </property>
+      <property name="minimumDateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2024</year>
+        <month>1</month>
+        <day>1</day>
+       </datetime>
+      </property>
+      <property name="currentSection">
+       <enum>QDateTimeEdit::DaySection</enum>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="available_dates">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>41</y>
+        <width>256</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="submit_visit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>91</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Umów wizytę</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>10</y>
+        <width>211</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Dostępne wizyty</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="select_referral">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>191</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>Skierowanie</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="room_input">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>110</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>Pokój</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="schedules">
+     <attribute name="title">
+      <string>Zarządzaj harmonogramem</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dodaj</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>190</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Usuń</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="schedules_table">
+      <property name="geometry">
+       <rect>
+        <x>255</x>
+        <y>10</y>
+        <width>301</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>początek</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>koniec</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>rodzaj</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>192</width>
+        <height>189</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_7">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Lekarz</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Pokój</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>Początek</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>Koniec</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QTimeEdit" name="timeEdit"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QTimeEdit" name="timeEdit_2"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>Dzień</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="label_24">
+         <property name="text">
+          <string>Rodzaj</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QDateEdit" name="dateEdit"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="comboBox_3">
+         <item>
+          <property name="text">
+           <string>Wizyty</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Zabiegi</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>RTG</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>MRI</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>USG</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>EKG</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Morfologia</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QComboBox" name="schedule_doctors"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="schedule_room"/>
+       </item>
+      </layout>
+     </widget>
+     <zorder>layoutWidget</zorder>
+     <zorder>pushButton</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>schedules_table</zorder>
+    </widget>
+    <widget class="QWidget" name="users">
+     <attribute name="title">
+      <string>Zarządzaj użytkownikami</string>
+     </attribute>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>214</x>
+        <y>21</y>
+        <width>181</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_6">
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label_15">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Reset hasła</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Login</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Nowe hasło</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_reset_password">
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid black</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>Resetuj hasło</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="comboBox_reset"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>41</x>
+        <y>21</y>
+        <width>167</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_5">
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label_10">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Dodaj konto</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Login</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="add_account_user">
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid black</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Hasło</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="add_account_password">
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid black</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Typ konta</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="add_account_type">
+         <item>
+          <property name="text">
+           <string>lekarz</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>rejestracja</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>pacjent</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="pushButton_add">
+         <property name="text">
+          <string>Utwórz konto</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="add_account_pesel">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid black;</string>
+         </property>
+         <property name="inputMask">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>Pesel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>20</y>
+        <width>141</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label_19">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Usuwanie konta</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Login</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="comboBox_delete"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="pushButton_delete">
+         <property name="text">
+          <string>Usuń konto</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>name_input</sender>
+   <signal>returnPressed()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>name_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>657</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>familyname_input</sender>
+   <signal>returnPressed()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>familyname_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>662</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>city_input</sender>
+   <signal>returnPressed()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>city_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>644</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>postcode_input</sender>
+   <signal>returnPressed()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>postcode_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>498</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>664</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>street_input</sender>
+   <signal>returnPressed()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>street_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>498</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>654</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>birthdate_input</sender>
+   <signal>dateChanged(QDate)</signal>
+   <receiver>RegWindow</receiver>
+   <slot>birthdate_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>498</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>655</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_prescribtions</sender>
+   <signal>clicked()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>export_prescribtion()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>94</x>
+     <y>284</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>656</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_search_patient</sender>
+   <signal>clicked()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>search_patients()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>555</x>
+     <y>339</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>669</x>
+     <y>386</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget_search_patient</sender>
+   <signal>cellClicked(int,int)</signal>
+   <receiver>RegWindow</receiver>
+   <slot>set_current_patient()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>424</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>546</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_search_patient</sender>
+   <signal>returnPressed()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>search_patients()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>395</x>
+     <y>334</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>660</x>
+     <y>470</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>RegWindow</receiver>
+   <slot>tab_changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>605</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>550</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>submit_visit</sender>
+   <signal>clicked()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>schedule_new_event()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>187</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>24</x>
+     <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>select_referral</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>RegWindow</receiver>
+   <slot>choose_reff()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>183</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>23</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>submit_visit</sender>
+   <signal>clicked()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>new_sch_visit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>17</x>
+     <y>57</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>add_account_type</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>RegWindow</receiver>
+   <slot>add_account_type_selected(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>21</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>schedule_doctors</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>RegWindow</receiver>
+   <slot>set_schedules()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>116</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>add_schedule()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>11</x>
+     <y>309</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>delete_schedule()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>275</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>11</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_add</sender>
+   <signal>clicked()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>add_account()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>647</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>reset_pass()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>661</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_delete</sender>
+   <signal>clicked()</signal>
+   <receiver>RegWindow</receiver>
+   <slot>delete_acc()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>524</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>654</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>name_change()</slot>
+  <slot>familyname_change()</slot>
+  <slot>pesel_change()</slot>
+  <slot>birthdate_change()</slot>
+  <slot>city_change()</slot>
+  <slot>postcode_change()</slot>
+  <slot>street_change()</slot>
+  <slot>search_patients()</slot>
+  <slot>export_prescribtion()</slot>
+  <slot>set_current_patient()</slot>
+  <slot>tab_changed(int)</slot>
+  <slot>schedule_new_event()</slot>
+  <slot>choose_reff()</slot>
+  <slot>new_sch_visit()</slot>
+  <slot>add_account_type_selected(int)</slot>
+  <slot>set_schedules()</slot>
+  <slot>add_schedule()</slot>
+  <slot>delete_schedule()</slot>
+  <slot>add_account()</slot>
+  <slot>reset_pass()</slot>
+  <slot>delete_acc()</slot>
+ </slots>
+</ui>

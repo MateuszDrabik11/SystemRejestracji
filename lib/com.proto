@@ -1,0 +1,175 @@
+syntax ="proto3" ;
+
+service ClientServerCommunication
+{
+    rpc SearchForAccount(account_request) returns (account_message);
+    rpc UpdatePatientData(patient_message) returns (Empty);
+    rpc SearchForPatient(patient_message) returns (patient_message);
+    rpc SearchForPatients(patient_message) returns (stream patient_message);
+    rpc GetNextVisits(patient_message) returns (stream med_event_message);
+    rpc GetPrescribtions(patient_message) returns (stream prescribtion_message);
+    rpc GetExam(patient_message) returns (stream exam_message);
+    rpc GetProcedure(patient_message) returns (stream procedure_message);
+    rpc GetAvailableVisits(med_event_message) returns (stream schedule_message);
+    rpc GetAvailableExams(exam_message) returns (stream schedule_message);
+    rpc GetAvailableProcs(procedure_message) returns (stream schedule_message);
+    rpc ScheduleEvent(schedule_request) returns (Empty);
+    rpc GetReferals(patient_message) returns (stream med_event_message);
+    rpc GetDoctors(Empty) returns (stream account_message);
+    rpc GetSchedules(account_message) returns (stream schedule_message);
+    rpc AddAccount(add_account_msg) returns (Empty);
+    rpc ResetPassword(account_message) returns (Empty);
+    rpc DeleteAccount(account_message) returns (Empty);
+    rpc AddSchedule(schedule_message) returns (Empty);
+    rpc DeleteSchedule(schedule_message) returns (Empty);
+    rpc GetAccounts(Empty) returns (stream account_message);
+
+    rpc GetPatientsHistory(account_message) returns (stream med_event_message);
+    rpc GetPatientsEvent(med_event_message) returns (event_response);
+    rpc GetPatientsEvents(account_message) returns (stream med_event_message);
+    rpc GetPatientPrescribtion(account_message) returns (stream prescribtion_message);
+    rpc GetExamResults(exam_message) returns (result);
+
+    rpc GetDoctorSchedules(account_message) returns (stream schedule_message);
+    rpc GetScheduledEvents(schedule_message) returns (stream med_event_message);
+    rpc GetScheduledPatients(schedule_message) returns (stream patient_message);
+    rpc NewReferal(med_event_message) returns (Empty);
+    rpc NewPrescribtion(prescribtion_message) returns (Empty);
+    rpc EventDone(med_event_message) returns (Empty);
+
+    rpc ScheduleDone(schedule_message) returns (Empty);
+
+    rpc AddResult(result) returns (Empty);
+}
+
+message result
+{
+    oneof res
+    {
+        ekg_res_message ekg = 1;
+        mor_res_message mor = 2;
+        rtg_res_message rest = 3;
+    }
+}
+message event_response
+{
+    oneof event
+    {
+        exam_message exam = 1;
+        procedure_message proc = 2;
+        prescribtion_message pres = 3;
+    }
+}
+message add_account_msg
+{
+    account_message account = 1;
+    optional string pesel = 2;
+}
+message Empty
+{
+}
+message schedule_request
+{
+    schedule_message schedule = 1;
+    patient_message patient = 2;
+    oneof event
+    {
+        med_event_message visit = 3;
+        exam_message exam = 4;
+        procedure_message proc = 5;
+    }
+}
+message account_request
+{
+    string username = 1;
+    string password = 2;
+}
+
+message account_message
+{
+    string username = 1;
+    string password = 2;
+    string name = 3;
+    string familyname = 4;
+    string type = 5;
+}
+message med_event_message
+{
+    uint64 id = 1;
+    patient_message name = 2;
+    string describtion = 3;
+    string room = 4;
+    account_message who_prescribed = 5;
+    string time = 6;
+}
+message exam_message
+{
+    med_event_message event = 1;
+    account_message who_performs = 2;
+    string when = 3;
+    uint64 result_id = 4;
+    string room = 5;
+}
+message ekg_res_message
+{
+    exam_message result_id = 1;
+    uint32 rhytm = 2;
+    uint32 pr_delay = 3;
+    uint32 qrs = 4;
+}
+message mor_res_message
+{
+    exam_message result_id = 1;
+    uint32 rbc = 2;
+    uint32 hb = 3;
+    uint32 wbc = 4;
+    uint32 plt = 5;
+}
+message mri_res_message
+{
+    exam_message result_id = 1;
+    string result = 2;
+}
+message rtg_res_message
+{
+    exam_message result_id = 1;
+    string result = 2;
+}
+message usg_res_message
+{
+    exam_message result_id = 1;
+    string result = 2;
+}
+message patient_message
+{
+    string pesel = 1;
+    string city = 2;
+    string street = 3;
+    string postcode = 4;
+    string birthdate = 5;
+    account_message username = 6;
+}
+message prescribtion_message
+{
+    med_event_message event = 1;
+    string medicine = 2;
+    string dose = 3;
+    string exp_date = 4;
+}
+message procedure_message
+{
+    med_event_message event = 1;
+    account_message who_performs = 2;
+    string when = 3;
+    string room = 4;
+}
+message schedule_message
+{
+    account_message who = 1;
+    uint64 id = 2;
+    string start = 3;
+    string end = 4;
+    string type = 5;
+    string room = 6;
+    repeated med_event_message events = 7;
+}
